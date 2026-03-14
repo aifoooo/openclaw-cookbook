@@ -21,6 +21,8 @@ OpenClaw（龙虾）实战经验与学习笔记。
 - [OpenClaw 渠道配置](docs/learning/OpenClaw渠道配置.md) — Telegram、WhatsApp、Discord、Slack 配置
 - [OpenClaw 工具权限配置](docs/learning/OpenClaw工具权限配置.md) — tools.allow、deny、requireConfirmation
 - [OpenClaw Skill 开发指南](docs/learning/OpenClawSkill开发指南.md) — 创建自己的 Skill
+- [OpenClaw 日志与故障排查](docs/learning/OpenClaw日志与故障排查.md) — doctor、logs、常见错误修复
+- [OpenClaw Gateway 管理](docs/learning/OpenClawGateway管理.md) — 启动、停止、状态检查、守护进程
 - [OpenClaw 进阶学习计划](docs/learning/OpenClaw进阶学习计划.md) — 系统化学习路径
 
 ### 变更日志（changelog/）
