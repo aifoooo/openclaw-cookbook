@@ -186,6 +186,37 @@ openclaw config set session.reset.idleMinutes 60
 - `reserveTokens: 16384` → 可用空间 = 128,000 - 16,384 = 111,616
 - `keepRecentTokens: 20000` → 压缩时保留最近 20,000 tokens 不压缩
 
+#### reserveTokens vs softThresholdTokens
+
+这两个也容易混淆：
+
+| 参数 | 作用 | 触发什么？ |
+|------|------|-----------|
+| `reserveTokens` | 给输出预留空间 | 决定压缩**何时发生** |
+| `softThresholdTokens` | 提前触发记忆保存 | 决定 memoryFlush **何时触发** |
+
+**时间线**：
+
+```
+对话增长中...
+    │
+    ▼ 达到（压缩阈值 - softThresholdTokens）
+    │   → memoryFlush：保存记忆到文件
+    │
+    ▼ 达到（上下文窗口 - reserveTokens）
+    │   → 执行压缩
+    │
+    ▼ 压缩完成，腾出空间
+        → 继续对话
+```
+
+**类比**：
+
+| 参数 | 类比 |
+|------|------|
+| `reserveTokens` | 停车场预留车位（给新车留位置） |
+| `softThresholdTokens` | 提前 5 分钟提醒（给你时间收拾东西） |
+
 #### 压缩模式：default vs safeguard
 
 | 模式 | 说明 | 适用场景 |
