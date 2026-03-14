@@ -152,7 +152,10 @@ openclaw channels login whatsapp
 生成邀请链接：
 
 ```
-https://discord.com/api/oauth2/authorize?client_id=你的ApplicationID&permissions=2048&scope=bot
+https://discord.com/api/oauth2/authorize?
+  client_id=你的ApplicationID
+  &permissions=2048
+  &scope=bot
 ```
 
 ### 4.4 Intents 配置
