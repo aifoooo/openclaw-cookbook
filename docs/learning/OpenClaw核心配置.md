@@ -1,4 +1,4 @@
-# openclaw.json 核心配置入门
+# OpenClaw 核心配置
 
 OpenClaw 的核心配置文件，控制智能体的行为、内存管理、模型选择等。
 
