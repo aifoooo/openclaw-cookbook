@@ -23,6 +23,9 @@ OpenClaw（龙虾）实战经验与学习笔记。
 - [OpenClaw Skill 开发指南](docs/learning/OpenClawSkill开发指南.md) — 创建自己的 Skill
 - [OpenClaw 日志与故障排查](docs/learning/OpenClaw日志与故障排查.md) — doctor、logs、常见错误修复
 - [OpenClaw Gateway 管理](docs/learning/OpenClawGateway管理.md) — 启动、停止、状态检查、守护进程
+- [OpenClaw 从零搭建实战](docs/learning/OpenClaw从零搭建实战.md) — 新机器完整配置指南
+- [OpenClaw 自定义 Skill 实战](docs/learning/OpenClaw自定义Skill实战.md) — 开发每日简报生成器
+- [OpenClaw 长期记忆集成实战](docs/learning/OpenClaw长期记忆集成实战.md) — 配置 memU 记忆系统
 - [OpenClaw 进阶学习计划](docs/learning/OpenClaw进阶学习计划.md) — 系统化学习路径
 
 ### 变更日志（changelog/）
