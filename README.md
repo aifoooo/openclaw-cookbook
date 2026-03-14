@@ -18,6 +18,9 @@ OpenClaw（龙虾）实战经验与学习笔记。
 
 - [OpenClaw 架构原理](docs/learning/OpenClaw架构原理.md) — 核心架构、代理循环、工具与技能体系
 - [OpenClaw 核心配置](docs/learning/OpenClaw核心配置.md) — 会话、模型、内存管理配置
+- [OpenClaw 渠道配置](docs/learning/OpenClaw渠道配置.md) — Telegram、WhatsApp、Discord、Slack 配置
+- [OpenClaw 工具权限配置](docs/learning/OpenClaw工具权限配置.md) — tools.allow、deny、requireConfirmation
+- [OpenClaw Skill 开发指南](docs/learning/OpenClawSkill开发指南.md) — 创建自己的 Skill
 - [OpenClaw 进阶学习计划](docs/learning/OpenClaw进阶学习计划.md) — 系统化学习路径
 
 ### 变更日志（changelog/）
