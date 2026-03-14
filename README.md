@@ -17,7 +17,7 @@ OpenClaw（龙虾）实战经验与学习笔记。
 系统学习 OpenClaw 的调研报告和原理分析。
 
 - [OpenClaw 架构原理](docs/learning/OpenClaw架构原理.md) — 核心架构、代理循环、工具与技能体系
-- [OpenClaw 配置详解](docs/learning/OpenClaw配置详解.md) — 核心配置与内存管理
+- [OpenClaw 核心配置](docs/learning/OpenClaw核心配置.md) — 会话、模型、内存管理配置
 
 ### 变更日志（changelog/）
 
