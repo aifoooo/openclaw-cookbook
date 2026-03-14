@@ -1,14 +1,14 @@
 # OpenClaw Cookbook
 
-OpenClaw（龙虾 🦞）实战经验与学习笔记。
+OpenClaw（龙虾）实战经验与学习笔记。
 
 ## 目录
 
 ### 经验分享（experience/）
 
-从实战中总结的经验和踩坑记录。
+从实战中摸索出的经验。
 
-- [龙虾初相遇](docs/experience/龙虾初相遇.md) — 入门配置与核心准则
+- [龙虾初相遇](docs/experience/龙虾初相遇.md) — 核心准则与入门配置
 - [深度调研](docs/experience/深度调研.md) — GPT-Researcher 安装与使用
 - [长期的伙伴](docs/experience/长期的伙伴.md) — memU 长期记忆系统实践
 
@@ -26,7 +26,7 @@ OpenClaw（龙虾 🦞）实战经验与学习笔记。
 
 ## 关于
 
-本仓库记录 OpenClaw 的使用经验、踩坑记录、学习笔记和成长轨迹。
+本仓库记录 OpenClaw 的使用经验、学习笔记和成长轨迹。
 
 ## 贡献
 
