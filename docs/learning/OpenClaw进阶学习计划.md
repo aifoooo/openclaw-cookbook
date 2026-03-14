@@ -18,7 +18,7 @@
 | 1 | 会话、上下文、模型、工具 | openclaw.json 核心配置 | 官方配置文档 | ✅ 已掌握 |
 | 2 | 重置策略、压缩、剪枝 | compaction、contextPruning | 已有经验 | ✅ 已掌握 |
 | 3 | 主模型、降级链、多模型 | fallbacks、models 配置 | 官方模型文档 | ✅ 已掌握 |
-| 4 | WhatsApp、Slack、Discord、CLI | 渠道配置与对接 | 官方渠道文档 | ⏳ 待学习 |
+| 4 | WhatsApp、Slack、Discord、CLI | 渠道配置与对接 | 官方渠道文档 | ✅ 已掌握 |
 
 ---
 
@@ -26,8 +26,8 @@
 
 | 序号 | 内容 | 重点 | 文档 | 状态 |
 |-----|------|------|------|------|
-| 5 | tools.allow 详细规则 | 权限控制、审批机制 | 官方工具文档 | ⏳ 待学习 |
-| 6 | 创建自己的 skill | SKILL.md 编写规范 | 官方 Skill 文档 | ⏳ 待学习 |
+| 5 | tools.allow 详细规则 | 权限控制、审批机制 | 官方工具文档 | ✅ 已掌握 |
+| 6 | 创建自己的 skill | SKILL.md 编写规范 | 官方 Skill 文档 | ✅ 已掌握 |
 | 7 | MEMORY.md、memU | 长期记忆系统 | 已有经验 | ✅ 已掌握 |
 
 ---
