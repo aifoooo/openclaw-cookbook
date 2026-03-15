@@ -11,6 +11,7 @@ OpenClaw（龙虾）实战经验与学习笔记。
 - [龙虾初相遇](docs/experience/龙虾初相遇.md) — 核心准则与入门配置
 - [深度调研](docs/experience/深度调研.md) — GPT-Researcher 安装与使用
 - [长期的伙伴](docs/experience/长期的伙伴.md) — memU 长期记忆系统实践
+- [多渠道配置实战](docs/experience/多渠道配置实战.md) — 多 Agent、多账号、独立记忆系统
 
 ### 学习笔记（learning/）
 
@@ -26,7 +27,6 @@ OpenClaw 从入门到进阶的系统性学习笔记。
 - [OpenClaw 从零搭建实战](docs/learning/OpenClaw从零搭建实战.md) — 新机器完整配置指南
 - [OpenClaw 自定义 Skill 实战](docs/learning/OpenClaw自定义Skill实战.md) — 开发每日简报生成器
 - [OpenClaw 长期记忆集成实战](docs/learning/OpenClaw长期记忆集成实战.md) — 配置 memU 记忆系统
-- [OpenClaw 进阶学习计划](docs/learning/OpenClaw进阶学习计划.md) — 系统化学习路径
 
 ### 变更日志（changelog/）
 
