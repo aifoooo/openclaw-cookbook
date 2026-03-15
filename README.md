@@ -27,6 +27,7 @@ OpenClaw 从入门到进阶的系统性学习笔记。
 - [OpenClaw 从零搭建实战](docs/learning/OpenClaw从零搭建实战.md) — 新机器完整配置指南
 - [OpenClaw 自定义 Skill 实战](docs/learning/OpenClaw自定义Skill实战.md) — 开发每日简报生成器
 - [OpenClaw 长期记忆集成实战](docs/learning/OpenClaw长期记忆集成实战.md) — 配置 memU 记忆系统
+- [OpenClaw 开发历史](docs/learning/OpenClaw开发历史.md) — 从周末项目到 GitHub 榜首
 
 ### 变更日志（changelog/）
 
