@@ -271,7 +271,7 @@ Before doing anything else:
 | preference | 用户偏好 | 用户偏好文件名大写开头 |
 | goal | 目标 | 用户想深入学习 OpenClaw |
 | fact | 事实 | 用户有 GitHub 仓库 aifoooo/openclaw-cookbook |
-| preference | 偏好 | 用户喜欢带架构图的技术文档 |
+| decision | 决策 | 用户决定使用腾讯云作为主力模型 |
 
 ### 8.2 记忆重要性
 
