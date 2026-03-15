@@ -374,11 +374,17 @@ openclaw logs --follow | grep -i skill
 | 网络请求 | 是否发送数据到外部 |
 | 文件操作 | 是否访问敏感文件 |
 
-### 9.2 使用 skill-vetter
+### 9.2 使用安全审计
 
 ```bash
-# 审查 Skill
-skill-vetter ~/.openclaw/workspace/skills/my-skill/
+# 审计配置和本地状态
+openclaw security audit
+
+# 深度审计（包括 Gateway 检查）
+openclaw security audit --deep
+
+# 自动修复安全问题
+openclaw security audit --fix
 ```
 
 ---
