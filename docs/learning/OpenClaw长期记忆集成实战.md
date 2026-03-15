@@ -254,9 +254,7 @@ Before doing anything else:
 2. Read `USER.md`
 3. Read `memory/YYYY-MM-DD.md`
 4. **查询最近 10 条记忆**：
-   ```bash
    python3 /root/.openclaw/workspace/skills/memu/local_memory.py recent 10
-   ```
 5. If in MAIN SESSION: Also read `MEMORY.md`
 ```
 
