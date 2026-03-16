@@ -14,7 +14,7 @@ OpenClaw（龙虾）实战经验与学习笔记。
 - [多渠道配置实战](docs/experience/多渠道配置实战.md) — 多 Agent、多账号、独立记忆系统
 - [永不停止的龙虾](docs/experience/永不停止的龙虾.md) — Agent 不间断工作的最佳实践
 - [高质量软件](docs/experience/高质量软件.md) — 需求分析 → 四维检查 → 测试验证
-- [学会画架构图](docs/experience/学会画架构图.md) — 技能封装、工具集成、自然语言理解
+- [学会画架构图](docs/experience/学会画架构图.md) — 架构图工具安装与使用
 
 ### 学习笔记（learning/）
 
