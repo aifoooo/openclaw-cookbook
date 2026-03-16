@@ -44,7 +44,9 @@ OpenClaw 采用**两阶段故障转移机制**：
 
 ## 二、配置方式
 
-### 2.1 基本配置
+### 2.1 基本配置（Model Fallback）
+
+在 `~/.openclaw/openclaw.json` 中配置主模型和降级链：
 
 ```json
 {
@@ -64,6 +66,10 @@ OpenClaw 采用**两阶段故障转移机制**：
 
 ### 2.2 多 Auth Profile 配置
 
+当同一个 Provider 有多个账号（API Key 或 OAuth）时，可以配置轮换顺序。
+
+**配置位置**：`~/.openclaw/openclaw.json`
+
 ```json
 {
   "auth": {
@@ -76,6 +82,17 @@ OpenClaw 采用**两阶段故障转移机制**：
   }
 }
 ```
+
+**认证信息存储位置**：`~/.openclaw/agents/<agentId>/agent/auth-profiles.json`
+
+### 2.3 配置方式对比
+
+| 场景 | 配置方式 |
+|------|---------|
+| **单账号** | 直接在 `models.providers.*.apiKey` 配置 |
+| **多账号** | 需要 `auth.order` + `auth-profiles.json` |
+
+**注意**：如果只有一个 API Key，不需要配置 `auth.order`，OpenClaw 会自动使用 `models.providers.*.apiKey`。
 
 ---
 
