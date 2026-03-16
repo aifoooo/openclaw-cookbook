@@ -7,11 +7,11 @@
 ## 背景
 
 在生产环境中，LLM 服务可能遇到：
-- **速率限制**：API 调用超过限额
 - **认证失败**：Token 过期或无效
-- **服务过载**：上游服务返回 529 错误
 - **账单问题**：余额不足
+- **服务过载**：上游服务返回 529 错误
 - **超时**：网络或服务响应慢
+- **速率限制**：API 调用超过限额
 
 OpenClaw 的模型降级机制可以自动切换到备用模型，熔断机制可以防止故障扩散。
 
@@ -44,27 +44,7 @@ OpenClaw 采用**两阶段故障转移机制**：
 
 ## 二、配置方式
 
-### 2.1 基本配置（Model Fallback）
-
-在 `~/.openclaw/openclaw.json` 中配置主模型和降级链：
-
-```json
-{
-  "agents": {
-    "defaults": {
-      "model": {
-        "primary": "tencentcodingplan/glm-5",
-        "fallbacks": [
-          "deepseek/deepseek-chat",
-          "openai/gpt-4o-mini"
-        ]
-      }
-    }
-  }
-}
-```
-
-### 2.2 多 Auth Profile 配置
+### 2.1 多 Auth Profile 配置（阶段一）
 
 当同一个 Provider 有多个账号（API Key 或 OAuth）时，可以配置轮换顺序。
 
@@ -84,6 +64,26 @@ OpenClaw 采用**两阶段故障转移机制**：
 ```
 
 **认证信息存储位置**：`~/.openclaw/agents/<agentId>/agent/auth-profiles.json`
+
+### 2.2 Model Fallback 配置（阶段二）
+
+在 `~/.openclaw/openclaw.json` 中配置主模型和降级链：
+
+```json
+{
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "tencentcodingplan/glm-5",
+        "fallbacks": [
+          "deepseek/deepseek-chat",
+          "openai/gpt-4o-mini"
+        ]
+      }
+    }
+  }
+}
+```
 
 ### 2.3 配置方式对比
 
