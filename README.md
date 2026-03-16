@@ -13,6 +13,7 @@ OpenClaw（龙虾）实战经验与学习笔记。
 - [长期的伙伴](docs/experience/长期的伙伴.md) — memU 长期记忆系统实践
 - [多渠道配置实战](docs/experience/多渠道配置实战.md) — 多 Agent、多账号、独立记忆系统
 - [永不停止的龙虾](docs/experience/永不停止的龙虾.md) — Agent 不间断工作的最佳实践
+- [高质量软件](docs/experience/高质量软件.md) — 需求分析 → 四维检查 → 测试验证
 
 ### 学习笔记（learning/）
 
