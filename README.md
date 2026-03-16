@@ -22,7 +22,6 @@ OpenClaw 从入门到进阶的系统性学习笔记。
 
 - [OpenClaw 开发历史](docs/learning/OpenClaw开发历史.md) — 从周末项目到 GitHub 榜首
 - [OpenClaw 架构原理](docs/learning/OpenClaw架构原理.md) — 核心架构、代理循环、工具与技能体系
-- [OpenClaw 模型降级与熔断机制](docs/learning/OpenClaw模型降级与熔断机制.md) — 两阶段降级、指数退避、冷却机制
 - [OpenClaw 核心配置](docs/learning/OpenClaw核心配置.md) — 会话、模型、内存管理配置
 - [OpenClaw 渠道配置](docs/learning/OpenClaw渠道配置.md) — Telegram、WhatsApp、Discord、Slack 配置
 - [OpenClaw 工具权限配置](docs/learning/OpenClaw工具权限配置.md) — tools.allow、deny、requireConfirmation
@@ -32,6 +31,7 @@ OpenClaw 从入门到进阶的系统性学习笔记。
 - [OpenClaw 从零搭建实战](docs/learning/OpenClaw从零搭建实战.md) — 新机器完整配置指南
 - [OpenClaw 自定义 Skill 实战](docs/learning/OpenClaw自定义Skill实战.md) — 开发每日简报生成器
 - [OpenClaw 长期记忆集成实战](docs/learning/OpenClaw长期记忆集成实战.md) — 配置 memU 记忆系统
+- [OpenClaw 模型降级与熔断机制](docs/learning/OpenClaw模型降级与熔断机制.md) — 两阶段降级、指数退避、冷却机制
 
 ### 变更日志（changelog/）
 
