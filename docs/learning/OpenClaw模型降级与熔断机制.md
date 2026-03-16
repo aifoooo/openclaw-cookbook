@@ -164,9 +164,11 @@ OpenClaw 将失败分为不同类型，优先级从高到低：
 
 OpenClaw 按以下顺序构建候选模型列表：
 
-1. **当前请求的模型**（如果有覆盖）
+1. **当前请求的模型**
 2. **配置的 fallbacks 列表**
-3. **配置的主模型**
+3. **配置的主模型**（如果没有指定 `fallbacksOverride`）
+
+**注意**：`fallbacksOverride` 是指用户通过命令行参数或 API 临时指定的 fallbacks 列表，会覆盖配置文件中的 `agents.defaults.model.fallbacks`。当有 `fallbacksOverride` 时，最后不会添加配置的主模型。
 
 ### 4.2 降级流程
 
