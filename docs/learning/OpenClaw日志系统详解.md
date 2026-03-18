@@ -270,9 +270,7 @@ openclaw logs --local-time
 ```bash
 # 查看特定渠道日志
 openclaw channels logs --channel telegram
-
-# 实时查看
-openclaw channels logs --channel feishu --follow
+openclaw channels logs --channel feishu
 ```
 
 ### 6.3 直接查看文件
