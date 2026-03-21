@@ -455,6 +455,199 @@ WantedBy=multi-user.target
 
 ---
 
+## 十一、日志文件字段详解
+
+本节详细说明 OpenClaw 各日志文件的字段结构和用途。
+
+### 11.1 cache-trace.jsonl
+
+**位置**：`~/.openclaw/logs/cache-trace.jsonl`
+
+**用途**：记录 LLM 调用的缓存信息，用于上下文压缩和缓存命中优化。
+
+**文件格式**：每行一个 JSON 对象（JSONL 格式）
+
+**核心字段**：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `runId` | string | 本次 LLM 调用的唯一 ID |
+| `sessionId` | string | 会话 ID |
+| `sessionKey` | string | 会话键（格式：`agent:{agent}:{channel}:{chatType}:{chatId}`） |
+| `provider` | string | 模型提供商（如 `tencentcodingplan`） |
+| `modelId` | string | 模型 ID（如 `glm-5`） |
+| `modelApi` | string | API 类型（如 `openai-completions`） |
+| `ts` | string | 时间戳（ISO 8601 格式） |
+| `seq` | number | 会话中的调用序号 |
+| `stage` | string | 调用阶段（如 `stream:context`） |
+| `messageCount` | number | 本次调用包含的消息数量 |
+| `messageRoles` | array | 消息角色列表（如 `["user", "assistant"]`） |
+| `messageFingerprints` | array | 消息指纹（用于缓存匹配） |
+| `messagesDigest` | string | 消息内容的摘要哈希 |
+| `messages` | array | 实际消息内容（仅在调试模式） |
+
+**实用查询**：
+
+```bash
+# 查看最近的 LLM 调用
+tail -10 ~/.openclaw/logs/cache-trace.jsonl | jq .
+
+# 统计某个会话的调用次数
+cat ~/.openclaw/logs/cache-trace.jsonl | jq -r '.sessionKey' | sort | uniq -c
+
+# 查看某个模型的调用统计
+cat ~/.openclaw/logs/cache-trace.jsonl | jq -r '.modelId' | sort | uniq -c
+```
+
+---
+
+### 11.2 sessions.json
+
+**位置**：`~/.openclaw/agents/{agent-name}/sessions/sessions.json`
+
+**用途**：索引所有会话的元数据，快速查找会话信息。
+
+**核心字段**：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `sessionId` | string | 会话唯一 ID |
+| `updatedAt` | number | 最后更新时间（毫秒时间戳） |
+| `chatType` | string | 聊天类型（`direct` 私聊，`group` 群聊） |
+| `deliveryContext` | object | 投递上下文（渠道、接收者、账号） |
+| `lastChannel` | string | 最后使用的渠道 |
+| `lastAccountId` | string | 最后使用的账号 ID |
+| `origin` | object | 来源信息（渠道、表面、聊天类型等） |
+| `sessionFile` | string | 会话消息文件路径 |
+| `compactionCount` | number | 上下文压缩次数 |
+| `modelProvider` | string | 使用的模型提供商 |
+| `model` | string | 使用的模型 ID |
+| `contextTokens` | number | 上下文窗口大小 |
+| `inputTokens` | number | 累计输入 token 数 |
+| `outputTokens` | number | 累计输出 token 数 |
+| `totalTokens` | number | 累计总 token 数 |
+
+**实用查询**：
+
+```bash
+# 查看所有会话的 token 使用统计
+cat ~/.openclaw/agents/*/sessions/sessions.json | jq -r '.[] | "\(.origin.label): \(.totalTokens) tokens"'
+
+# 查找某个会话的文件路径
+cat ~/.openclaw/agents/mime-qq/sessions/sessions.json | jq -r '.[] | select(.origin.label | contains("特定标识")) | .sessionFile'
+
+# 查看活跃会话（最近更新的前 10 个）
+cat ~/.openclaw/agents/*/sessions/sessions.json | jq -r '.[] | "\(.updatedAt) \(.sessionKey)"' | sort -rn | head -10
+```
+
+---
+
+### 11.3 会话消息文件 (*.jsonl)
+
+**位置**：`~/.openclaw/agents/{agent-name}/sessions/{session-id}.jsonl`
+
+**用途**：存储实际对话消息内容，包括用户输入、AI 回复、工具调用等。
+
+**每条消息格式**：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `type` | string | 消息类型（`message`） |
+| `id` | string | 消息唯一 ID |
+| `parentId` | string | 父消息 ID（用于消息树结构） |
+| `timestamp` | string | 时间戳（ISO 8601 格式） |
+| `message` | object | 消息内容对象 |
+| `message.role` | string | 角色（`user`、`assistant`、`toolResult`） |
+| `message.content` | array | 内容数组（可包含文本、思考、工具调用等） |
+| `message.api` | string | 使用的 API 类型 |
+| `message.provider` | string | 使用的提供商 |
+| `message.model` | string | 使用的模型 |
+| `message.usage` | object | token 使用统计 |
+| `message.stopReason` | string | 停止原因（`stop`、`toolUse` 等） |
+
+**内容类型**：
+- `text`：普通文本
+- `thinking`：模型思考过程（reasoning）
+- `toolCall`：工具调用请求
+- `toolResult`：工具调用结果
+
+> ⚠️ **注意**：`toolResult` 类型的消息是工具调用结果，不应作为独立消息显示。
+
+**实用查询**：
+
+```bash
+# 查看最近 10 条消息
+tail -10 /path/to/session.jsonl | jq .
+
+# 统计消息类型分布
+cat /path/to/session.jsonl | jq -r '.message.role' | sort | uniq -c
+
+# 提取所有用户消息
+cat /path/to/session.jsonl | jq 'select(.message.role == "user") | .message.content[].text'
+
+# 统计消息数量（排除 toolResult）
+cat /path/to/session.jsonl | jq -c '. | select(.message.role != "toolResult")' | wc -l
+```
+
+---
+
+### 11.4 commands.log
+
+**位置**：`~/.openclaw/logs/commands.log`
+
+**用途**：记录 OpenClaw 命令执行历史。
+
+**格式**：每行一个 JSON 对象
+
+**核心字段**：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `timestamp` | string | 时间戳 |
+| `action` | string | 动作类型（`new` 新会话） |
+| `sessionKey` | string | 会话键 |
+| `senderId` | string | 发送者 ID |
+| `source` | string | 来源渠道 |
+
+---
+
+### 11.5 config-audit.jsonl
+
+**位置**：`~/.openclaw/logs/config-audit.jsonl`
+
+**用途**：审计配置文件变更，用于安全审计和问题排查。
+
+**格式**：每行一个 JSON 对象
+
+**核心字段**：
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `ts` | string | 时间戳 |
+| `source` | string | 变更来源（`config-io`） |
+| `event` | string | 事件类型（`config.write`） |
+| `configPath` | string | 配置文件路径 |
+| `pid` | number | 进程 ID |
+| `argv` | array | 执行的命令参数 |
+| `previousHash` | string | 变更前的文件哈希 |
+| `nextHash` | string | 变更后的文件哈希 |
+| `result` | string | 操作结果（`rename`） |
+
+**实用查询**：
+
+```bash
+# 查看最近的配置变更
+tail -20 ~/.openclaw/logs/config-audit.jsonl | jq .
+
+# 查找特定时间段的配置变更
+cat ~/.openclaw/logs/config-audit.jsonl | jq 'select(.ts >= "2026-03-01" and .ts < "2026-04-01")'
+
+# 查看谁改了配置
+cat ~/.openclaw/logs/config-audit.jsonl | jq -r '.argv | join(" ")'
+```
+
+---
+
 ## 参考资料
 
 - [OpenClaw 官方文档](https://docs.openclaw.ai)
