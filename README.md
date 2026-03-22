@@ -15,6 +15,7 @@ OpenClaw（龙虾）实战经验与学习笔记。
 - [永不停止的龙虾](docs/experience/永不停止的龙虾.md) — Agent 不间断工作的最佳实践
 - [高质量软件](docs/experience/高质量软件.md) — 需求分析 → 四维检查 → 测试验证
 - [学会画架构图](docs/experience/学会画架构图.md) — 架构图工具安装与使用
+- [AI 调试能力提升](docs/experience/AI调试能力提升.md) — 为什么 AI 调试效率低，如何改进
 
 ### 学习笔记（learning/）
 
