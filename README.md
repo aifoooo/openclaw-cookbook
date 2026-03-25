@@ -10,13 +10,11 @@ OpenClaw（龙虾）实战经验与学习笔记。
 
 - [龙虾初相遇](docs/experience/龙虾初相遇.md) — 核心准则与入门配置
 - [深度调研](docs/experience/深度调研.md) — GPT-Researcher 安装与使用
-- [长期的伙伴](docs/experience/长期的伙伴.md) — memU 长期记忆系统实践
+- - [长期的伙伴](docs/experience/长期的伙伴.md) — memU 长期记忆系统实践
 - [多渠道配置实战](docs/experience/多渠道配置实战.md) — 多 Agent、多账号、独立记忆系统
 - [永不停止的龙虾](docs/experience/永不停止的龙虾.md) — Agent 不间断工作的最佳实践
 - [高质量软件](docs/experience/高质量软件.md) — 需求分析 → 四维检查 → 测试验证
 - [学会画架构图](docs/experience/学会画架构图.md) — 架构图工具安装与使用
-- [AI 调试能力提升](docs/experience/AI调试能力提升.md) — 为什么 AI 调试效率低，如何改进
-- [AI 编程失败教训](docs/experience/AI编程失败教训.md) — 一次痛苦的调试经历复盘
 
 ### 学习笔记（learning/）
 
@@ -35,6 +33,12 @@ OpenClaw 从入门到进阶的系统性学习笔记。
 - [OpenClaw 自定义 Skill 实战](docs/learning/OpenClaw自定义Skill实战.md) — 开发每日简报生成器
 - [OpenClaw 长期记忆集成实战](docs/learning/OpenClaw长期记忆集成实战.md) — 配置 memU 记忆系统
 - [OpenClaw 模型降级与熔断机制](docs/learning/OpenClaw模型降级与熔断机制.md) — 两阶段降级、指数退避、冷却机制
+
+### 工程实践（工程实践/）
+
+工程实践中的经验总结与深度研究。
+
+- [AI 调试能力提升](docs/工程实践/AI调试能力提升.md) — 为什么 AI 调试效率低，如何改进
 
 ### 变更日志（changelog/）
 
