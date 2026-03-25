@@ -16,6 +16,7 @@ OpenClaw（龙虾）实战经验与学习笔记。
 - [高质量软件](docs/experience/高质量软件.md) — 需求分析 → 四维检查 → 测试验证
 - [学会画架构图](docs/experience/学会画架构图.md) — 架构图工具安装与使用
 - [AI 调试能力提升](docs/experience/AI调试能力提升.md) — 为什么 AI 调试效率低，如何改进
+- [AI 编程失败教训](docs/experience/AI编程失败教训.md) — 一次痛苦的调试经历复盘
 
 ### 学习笔记（learning/）
 
