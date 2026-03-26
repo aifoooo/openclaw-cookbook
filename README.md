@@ -41,6 +41,12 @@ OpenClaw 从入门到进阶的系统性学习笔记。
 - [AI 调试能力提升](docs/工程实践/AI调试能力提升.md) — 为什么 AI 调试效率低，如何改进
 - [如何让AI写出杰出的软件](docs/工程实践/如何让AI写出杰出的软件.md) — Design-First、Spec-Driven Development 实践指南
 
+### 他山之石（他山之石/）
+
+外部项目的深度研究与经验借鉴。
+
+- [YC_CEO的AI编程方法论_gstack](docs/他山之石/YC_CEO的AI编程方法论_gstack.md) — Garry Tan 的 28 个技能体系与三大原则
+
 ### 变更日志（changelog/）
 
 记录龙虾的成长轨迹和恢复办法。
