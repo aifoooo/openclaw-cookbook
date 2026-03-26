@@ -39,7 +39,7 @@ OpenClaw 从入门到进阶的系统性学习笔记。
 工程实践中的经验总结与深度研究。
 
 - [AI 调试能力提升](docs/工程实践/AI调试能力提升.md) — 为什么 AI 调试效率低，如何改进
-- [如何让AI写出杰出的软件](docs/工程实践/如何让AI写出杰出的软件.md) — Design-First、Spec-Driven Development 实践指南
+- [让AI写出更好的软件](docs/工程实践/让AI写出更好的软件.md) — Design-First、Spec-Driven Development 实践指南
 
 ### 他山之石（他山之石/）
 
